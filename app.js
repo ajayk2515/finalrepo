@@ -3,6 +3,7 @@ const shortId = require('shortid')
 const createHttpError = require('http-errors')
 const mongoose = require('mongoose')
 const path = require('path')
+const PORT=process.env.PORT||3000;
 const ShortUrl = require('./models/url.model')
 
 const app = express()
@@ -73,4 +74,4 @@ app.use((err, req, res, next) => {
   res.render('index', { error: err.message })
 })
 
-app.listen(3000, () => console.log('🌏 on port 3000...'))
+app.listen(PORT, () => console.log('🌏 on port 3000...'))
